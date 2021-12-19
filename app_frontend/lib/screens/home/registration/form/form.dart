@@ -51,7 +51,7 @@ class _FormFieldCustomState extends State<FormFieldCustom> {
               width: size.width - defaultPadding * 2,
               child: TextFieldCustom(
                 id: 1,
-                isPass: true,
+                isPass: false,
                 prefixSvg: "assets/svg/sem.svg",
                 padding: defaultPadding,
                 hintText: "sem",
@@ -64,7 +64,7 @@ class _FormFieldCustomState extends State<FormFieldCustom> {
               width: size.width - defaultPadding * 2,
               child: TextFieldCustom(
                 id: 2,
-                isPass: true,
+                isPass: false,
                 prefixSvg: "assets/svg/department.svg",
                 padding: defaultPadding,
                 hintText: "department",
@@ -77,7 +77,7 @@ class _FormFieldCustomState extends State<FormFieldCustom> {
               width: size.width - defaultPadding * 2,
               child: TextFieldCustom(
                 id: 3,
-                isPass: true,
+                isPass: false,
                 prefixSvg: "assets/svg/college.svg",
                 padding: defaultPadding,
                 hintText: "college",
@@ -94,7 +94,7 @@ class _FormFieldCustomState extends State<FormFieldCustom> {
               ),
               child: TextFieldCustom(
                 id: 4,
-                isPass: true,
+                isPass: false,
                 prefixSvg: "assets/svg/mobile.svg",
                 padding: defaultPadding,
                 hintText: "mobile",

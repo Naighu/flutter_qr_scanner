@@ -10,7 +10,7 @@ class Api {
   static const url = "http://159.89.161.168:5000";
 
   static Future<String> getCertificate(int id) async {
-    final urLink = Uri.parse(url + "/getcertificate");
+    final urLink = Uri.parse(url + "/getcertificateMobile");
     final response = await http.post(urLink, body: {'id': id.toString()});
 
     String a = response.body;
