@@ -55,13 +55,34 @@ def addUser():
     dept =request.form.get('dept')
     college =request.form.get('college')
     mobile =request.form.get('mobile')
-    sql.addUser(name,sem,dept,college,mobile);
+    print("user details ",name," ",sem," ",college , " ",dept, " ",mobile)
+    sql.addUser((name,sem,dept,college,mobile));
     print(tag)
     
 
 @app.route("/getcertificate",methods = ["POST"])
 @cross_origin()
 def getCertificate():
+    id= request.form.get('id')
+    user = sql.getUserDetails(id)[0]
+
+    img = Image.open("certificate.png")
+    draw = ImageDraw.Draw(img)
+    # font = ImageFont.truetype(<font-file>, <font-size>)
+    font = ImageFont.truetype("Rubik.ttf", 100)
+    # draw.text((x, y),"Sample Text",(r,g,b))
+    width, height = draw.textsize(user["name"], font=font)
+    draw.text(((1414 * 0.5)-(width/2), 860),user["name"],(0,0,0),font=font)
+    
+    img.save("write.png")
+    rawBytes = io.BytesIO()
+    img.save(rawBytes, "PNG")
+    rawBytes.seek(0)
+    img_base64 = base64.b64encode(rawBytes.read())
+    return img_base64
+
+@app.route("/getcertificateMobile",methods = ["POST"])
+def getCertificateMobile():
     id= request.form.get('id')
     user = sql.getUserDetails(id)[0]
 

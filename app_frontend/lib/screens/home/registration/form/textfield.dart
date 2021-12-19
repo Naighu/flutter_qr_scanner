@@ -74,18 +74,17 @@ class TextFieldCustomState extends State<TextFieldCustom> {
               }
               return null;
             },
-            onEditingComplete: () {
+            onChanged: (value) {
               if (widget.id == 0) {
-                registrationController.name = myController.value.toString();
+                registrationController.name = value.toString();
               } else if (widget.id == 1) {
-                registrationController.sem = myController.value.toString();
+                registrationController.sem = value.toString();
               } else if (widget.id == 2) {
-                registrationController.department =
-                    myController.value.toString();
+                registrationController.department = value.toString();
               } else if (widget.id == 3) {
-                registrationController.college = myController.value.toString();
+                registrationController.college = value.toString();
               } else if (widget.id == 4) {
-                registrationController.mobile = myController.value.toString();
+                registrationController.mobile = value.toString();
               }
             },
             //validator: widget.validateFun!,

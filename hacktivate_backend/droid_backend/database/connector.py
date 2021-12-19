@@ -12,10 +12,8 @@ class Sql:
         )
         self.cursor = self.db.cursor()
     def addUser(self,name,sem,dept,college,mobile):
-        try:
-            sql =  f"INSERT INTO ${self.userTable} VALUES(NULL,'${name}','${sem}','${dept}','${college}','${mobile}')"
-            self.cursor.execute(sql)
-            self.db.commit()
+        try: 
+            self.cursor.execute("INSERT INTO 'user' ('name', 'sem','dept','college','mobile') VALUES(%s,%s,%s,%s,%s)",(name, sem, dept, college, mobile))
         except:
             print("error while adding user")
     def insert(self,val):

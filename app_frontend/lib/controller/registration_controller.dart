@@ -18,5 +18,6 @@ class RegistrationController extends GetxController {
         mobile: mobile,
         department: department,
         college: college);
+    print("user added $name $sem $department $college $mobile");
   }
 }
