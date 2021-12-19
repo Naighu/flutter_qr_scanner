@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:scanner/backend/api.dart';
 import 'package:scanner/constants/constants.dart';
@@ -150,10 +151,10 @@ class _ScanningCompletePageState extends State<ScanningCompletePage>
                             const SizedBox(
                               height: 16,
                             ),
-                            SvgPicture.asset(
-                              "assets/svg/droid.svg",
-                              height: 40,
-                            ),
+                            Text(
+                              "Codetivate",
+                              style: TextStyle(fontSize: 16.sp),
+                            )
                           ],
                         ),
                       ),

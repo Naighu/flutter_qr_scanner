@@ -75,4 +75,25 @@ class Api {
       print(e.toString());
     }
   }
+
+  static Future<void> addUser(
+      {required String name,
+      required String sem,
+      required String mobile,
+      required String department,
+      required String college}) async {
+    try {
+      final urLink = Uri.parse(url + "/getUser");
+      final response = await http.post(urLink, body: {
+        'name': name,
+        'sem': sem,
+        'college': college,
+        'dept': department,
+        'mobile': mobile
+      });
+      print("user added");
+    } catch (e) {
+      print(e);
+    }
+  }
 }

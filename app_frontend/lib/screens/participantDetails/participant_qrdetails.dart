@@ -6,8 +6,8 @@ import 'package:scanner/constants/constants.dart';
 import 'package:scanner/controller/person_controller.dart';
 import 'package:scanner/models/food.dart';
 import 'package:scanner/models/user.dart';
-import 'package:scanner/screens/certificates.dart/certificate_preview.dart';
-import 'package:scanner/screens/certificates.dart/certificates.dart';
+import 'package:scanner/screens/certificates/certificate_preview.dart';
+
 import 'package:scanner/screens/participantDetails/event_container.dart';
 
 import 'certificate.dart';
@@ -111,7 +111,7 @@ class _ParticipantDetailsState extends State<ParticipantDetails> {
                       child: InkWell(
                           onTap: () {
                             Get.to(CerficatePreview(
-                               user: widget.user,
+                              user: widget.user,
                             ));
                           },
                           child: Column(

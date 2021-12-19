@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:scanner/screens/certificates.dart/certificate_preview.dart';
 import 'package:scanner/screens/home/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:scanner/screens/participantDetails/participant_qrdetails.dart';
-
-import 'screens/scanningPage/scannerlog.dart';
 
 void main() {
   runApp(const MyApp());

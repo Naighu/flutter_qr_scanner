@@ -11,6 +11,13 @@ class Sql:
             database="droid"
         )
         self.cursor = self.db.cursor()
+    def addUser(self,name,sem,dept,college,mobile):
+        try:
+            sql =  f"INSERT INTO ${self.userTable} VALUES(NULL,'${name}','${sem}','${dept}','${college}','${mobile}')"
+            self.cursor.execute(sql)
+            self.db.commit()
+        except:
+            print("error while adding user")
     def insert(self,val):
         sql = f"INSERT INTO {self.userTable} (name, sem,dept,college,mobile) VALUES (%s, %s)"
         self.cursor.execute(sql, val)
@@ -86,7 +93,7 @@ class Sql:
         self.cursor.execute(sql)
         myresult = self.cursor.fetchall()
         return self.converJson1(myresult)
-    
+  
 # sql = Sql()
 
 # print(sql.getRefershments(1))

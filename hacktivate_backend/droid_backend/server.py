@@ -48,6 +48,17 @@ def getAllRefershmentDetails():
 def getRefershmentDetails():
     return jsonify(sql.getRefershments(int(request.form.get('id'))))
 
+@app.route("/addUser",methods = ["POST"])
+def addUser():
+    name =request.form.get('name')
+    sem =request.form.get('sem')
+    dept =request.form.get('dept')
+    college =request.form.get('college')
+    mobile =request.form.get('mobile')
+    sql.addUser(name,sem,dept,college,mobile);
+    print(tag)
+    
+
 @app.route("/getcertificate",methods = ["POST"])
 @cross_origin()
 def getCertificate():

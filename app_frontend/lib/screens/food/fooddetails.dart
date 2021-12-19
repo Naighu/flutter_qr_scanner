@@ -4,7 +4,7 @@ import 'package:scanner/backend/convert_csv.dart';
 import 'package:scanner/constants/constants.dart';
 import 'package:get/get.dart';
 import 'package:scanner/models/food.dart';
-import 'package:scanner/screens/certificates.dart/certificates.dart';
+import 'package:scanner/screens/certificates/certificates.dart';
 import 'package:scanner/screens/home/home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

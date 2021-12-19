@@ -6,8 +6,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:scanner/backend/convert_csv.dart';
 import 'package:scanner/constants/constants.dart';
-import 'package:scanner/screens/certificates.dart/certificates.dart';
+import 'package:scanner/screens/certificates/certificates.dart';
 import 'package:scanner/screens/food/fooddetails.dart';
+import 'package:scanner/screens/home/registration/registration.dart';
 import 'package:scanner/screens/home/top_widget.dart';
 import 'package:scanner/controller/person_controller.dart';
 import 'package:scanner/screens/scanningPage/scanning_page.dart';
@@ -36,11 +37,29 @@ class _HomeState extends State<Home> {
     int _currentIndex = 0;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          convert_csv_user(personController.userList);
-        },
-        child: Icon(Icons.download),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: "btn1",
+            onPressed: () {
+              Get.to(Registration());
+            },
+            child: Icon(Icons.add),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          FloatingActionButton(
+            heroTag: "btn2",
+            onPressed: () {
+              convert_csv_user(personController.userList);
+            },
+            child: Icon(
+              Icons.download,
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: CommonPageColors.white,
@@ -95,6 +114,17 @@ class _HomeState extends State<Home> {
           children: [
             const TopWidget(
               isCertificate: false,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              "registered peoples",
+              style: TextStyle(
+                color: CommonPageColors.textColor,
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+              ),
             ),
             Expanded(
               child: GetBuilder<PersonController>(builder: (personController) {
